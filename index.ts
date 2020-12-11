@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express()
 const PORT : string|number = process.env.PORT || 5000;
-let xmlparser = require('@type/express-xml-bodyparser');
+let xmlparser = require('@types/express-xml-bodyparser');
 app.use(xmlparser());
 
 app.post('/api/vendor', function (req, res) {
