@@ -17,7 +17,7 @@ app.post('/api/vendor', function (req, res) {
    console.log(`req.body : ${JSON.stringify(req.body)}`);
    console.log(`req.body : ${req.body}`);
    console.log(`req.body.vendorID : ${req.body.vendorID}`);
-   console.log(req.body);
+   console.dir(req.body);
    console.log(`req.headers : ${JSON.stringify(req.headers)}`);
    
    res.send(`<h1>Welcome to your simple server! Awesome right</h1> ${JSON.stringify(req.params,null,1)}`);
