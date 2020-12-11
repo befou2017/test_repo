@@ -2,8 +2,9 @@ import express from 'express';
 const app = express()
 const PORT : string|number = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
+require('body-parser-xml')(bodyParser);
 
-app.use(bodyParser());
+app.use(bodyParser.xml());
 
 app.post('/api/vendor', function (req, res) {
    console.log(`PORT : ${PORT}</p>`);
