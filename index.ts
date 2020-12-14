@@ -16,23 +16,26 @@ app.use(bodyParser.xml({
  }));
 
 app.post('/api/vendor', function (req, res) {
-   console.log(`req.body : ${JSON.stringify(req.body)}`);
+    console.log('*****POST ==> /api/vendor*****');
+   console.log(`req.params: ${JSON.stringify(req.params,null,4)}`);
+   console.log(`req.body : ${JSON.stringify(req.body,null,4)}`);
    console.log(`req.body.vendorID : ${req.body.vendorID}`);
    console.log(`req.headers : ${JSON.stringify(req.headers)}`);
-   res.send(`<h1>Welcome to your simple server! Awesome right</h1> ${JSON.stringify(req.params,null,1)}`);
+   res.send(`<h1>Welcome to your simple server! Awesome right</h1> <p>${JSON.stringify(req.params,null,1)}</p>`);
 });
 
 app.use("*",(req, res) =>{
+    console.log(`${JSON.stringify(req.params,null,4)}`);
 
-    //res.send(`<h1>Welcome to your simple server! Awesome right</h1> ${JSON.stringify(req.params,null,1)}`);
-
-    console.log(`req.query : ${JSON.stringify(req.query)}</p>`);
+   console.log(`req.query : ${JSON.stringify(req.query)}`);
 
    console.log(`req.params : ${JSON.stringify(req.params)}`);
    console.log(`req.body : ${JSON.stringify(req.body)}`);
    console.log(`req.user : ${JSON.stringify(req.baseUrl)}`);
    console.log(`req.query : ${JSON.stringify(req.query)}`);
    console.log(`req.headers : ${JSON.stringify(req.headers)}`);
+
+   res.send(`<h1>Welcome to your simple server! Awesome right</h1> <p>${JSON.stringify(req.params,null,1)}</p>`);
 
 });
 
