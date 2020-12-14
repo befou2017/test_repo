@@ -15,8 +15,10 @@ app.use(bodyParser.xml({
    }
  }));
 
-app.post('/api/vendor', function (req, res) {
-    console.log('*****POST ==> /api/vendor*****');
+app.post('/api/*', function (req, res) {
+    console.log(`*****POST ==> ${req.url}*********`);
+    console.log(`req.url : ${JSON.stringify(req.url)}`);
+    console.log(`req.query : ${JSON.stringify(req.query)}`);
    console.log(`req.params: ${JSON.stringify(req.params,null,4)}`);
    console.log(`req.body : ${JSON.stringify(req.body,null,4)}`);
    console.log(`req.body.vendorID : ${req.body.vendorID}`);
